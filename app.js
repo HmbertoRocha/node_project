@@ -1,5 +1,5 @@
 //this importss express
-const express = require('ex[ress');
+const express = require('express');
 
 //use dotenv to expose our enviroment variables
 require('dotenv').config();
@@ -13,6 +13,12 @@ const PORT = process.env.PORT;
 //router handler that will define uri/url that does something
 app.get('/home' , (req, res) =>{
     res.send('Hello, World');
+});
+
+//router handler that uses post. post creates resources
+app.post('/user/:id', (req, res) =>{
+    const user_id = req.params.id;
+    res.send(`the user id is: ${user_id}`);
 });
 
 
